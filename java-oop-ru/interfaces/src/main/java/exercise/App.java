@@ -10,6 +10,9 @@ import java.util.stream.Collectors;
 public class App {
 
     public static List<String> buildApartmentsList(List<Home> apartments, int n) {
+        if (apartments.isEmpty()) {
+            return new ArrayList<String>();
+        }
 
     List<Home> list = new ArrayList<>(apartments);
     Collections.sort(list, Comparator.comparing(Home::getArea));

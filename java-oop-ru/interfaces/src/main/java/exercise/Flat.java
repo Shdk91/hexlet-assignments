@@ -33,7 +33,7 @@ public class Flat implements Home {
 
     @Override
     public String toString() {
-        return "Квартира площадью " + getArea() + "метров на " + this.floor + "этаже";
+        return "Квартира площадью " + getArea() + " метров на " + this.floor + " этаже";
     }
 }
 // END
