@@ -18,7 +18,7 @@ public class ReversedSequenceTest {
         assertThat(text.length()).isEqualTo(6);
         assertThat(text.toString()).isEqualTo("fedcba");
         assertThat(text.charAt(1)).isEqualTo('e');
-        assertThat(text.subSequence(1, 2)).isEqualTo('e');
+        assertThat(text.subSequence(1, 4)).isEqualTo("edc");
 
 
   }
