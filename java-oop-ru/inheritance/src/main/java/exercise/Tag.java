@@ -1,6 +1,7 @@
 package exercise;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.stream.Collectors;
 import java.util.Map;
 
@@ -8,7 +9,7 @@ import java.util.Map;
 public class Tag {
 
 protected String name;
-protected Map<String, String> attributes = new HashMap<>();
+protected Map<String, String> attributes = new LinkedHashMap<>();
 
     public Tag(String name, Map<String, String> attributes) {
         this.name = name;
