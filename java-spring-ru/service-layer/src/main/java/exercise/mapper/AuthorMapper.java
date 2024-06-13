@@ -4,11 +4,7 @@ import exercise.dto.AuthorCreateDTO;
 import exercise.dto.AuthorDTO;
 import exercise.dto.AuthorUpdateDTO;
 import exercise.model.Author;
-import org.mapstruct.Mapper;
-import org.mapstruct.NullValuePropertyMappingStrategy;
-import org.mapstruct.MappingConstants;
-import org.mapstruct.ReportingPolicy;
-import org.mapstruct.MappingTarget;
+import org.mapstruct.*;
 
 @Mapper(
         uses = {JsonNullableMapper.class, ReferenceMapper.class},
@@ -20,6 +16,7 @@ public abstract class AuthorMapper {
 
     // BEGIN
     public abstract Author map(AuthorDTO dto);
+
     public abstract AuthorDTO map(Author model);
 
     public abstract Author map(AuthorCreateDTO authorCreateDTO);

@@ -1,6 +1,8 @@
 package exercise.service;
 
-import exercise.dto.*;
+import exercise.dto.BookCreateDTO;
+import exercise.dto.BookDTO;
+import exercise.dto.BookUpdateDTO;
 import exercise.exception.ResourceNotFoundException;
 import exercise.mapper.BookMapper;
 import exercise.repository.AuthorRepository;
@@ -40,13 +42,13 @@ public class BookService {
 
     public BookDTO findBookById(Long id) {
         var book = bookRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Book with id "+ id +" not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Book with id " + id + " not found"));
         return bookMapper.map(book);
     }
 
     public BookDTO updateBook(BookUpdateDTO data, Long id) {
         var book = bookRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Book with id "+ id +" not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Book with id " + id + " not found"));
         bookMapper.update(data, book);
         bookRepository.save(book);
         return bookMapper.map(book);
